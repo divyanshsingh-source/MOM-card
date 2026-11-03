@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My Super Mom!</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #4a5568;
+        }
+
+        /* Card Container */
+        .card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(229, 62, 109, 0.15);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(229, 62, 109, 0.25);
+        }
+
+        /* Decorative Heart */
+        .heart-icon {
+            font-size: 50px;
+            color: #e53e3e;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: pulse 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            color: #9b2c2c;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        /* Pure CSS AI-Style Digital Portrait Artwork Placeholder */
+        .ai-photo-container {
+            width: 100%;
+            height: 220px;
+            margin: 20px 0;
+            border-radius: 15px;
+            background: radial-gradient(circle at 30% 20%, #feb2b2 0%, #ff8787 40%, #f03e3e 100%);
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.1), 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .ai-photo-container::before {
+            content: "✨ AI Generative Portrait: Mother's Warmth ✨";
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            color: white;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+            letter-spacing: 1px;
+        }
+        .ai-photo-container::after {
+            content: "❤️";
+            position: absolute;
+            top: 35%;
+            left: 44%;
+            font-size: 4rem;
+            opacity: 0.85;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+
+        /* Long Narrative Paragraph */
+        .long-text {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            text-align: justify;
+            margin: 20px 0 30px 0;
+            padding: 15px;
+            background-color: #fffaf0;
+            border-radius: 10px;
+            border-left: 4px solid #dd6b20;
+        }
+
+        /* 7th Grade Core Lines */
+        .lines-container {
+            margin-bottom: 30px;
+        }
+
+        .mom-line {
+            background: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 0 12px 12px 0;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            text-align: left;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideIn 0.5s forwards;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .mom-line:hover {
+            background: #fed7d7;
+            transform: scale(1.02) translateX(5px);
+        }
+
+        .mom-line:nth-child(1) { animation-delay: 0.2s; }
+        .mom-line:nth-child(2) { animation-delay: 0.4s; }
+        .mom-line:nth-child(3) { animation-delay: 0.6s; }
+        .mom-line:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* 10 Buttons Grid System */
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background: #e53e3e;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            outline: none;
+            box-shadow: 0 4px 10px rgba(229, 62, 109, 0.2);
+        }
+
+        .btn:hover {
+            background: #c53030;
+            transform: scale(1.03);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Openable Message Display Boxes */
+        .surprise-msg {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.4s ease-out;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #9b2c2c;
+            background: #fff5f5;
+            border: 1px dashed #e53e3e;
+            border-radius: 10px;
+            padding: 0 15px;
+            margin-top: 0;
+            line-height: 1.5;
+        }
+
+        .surprise-msg.show {
+            max-height: 120px;
+            opacity: 1;
+            padding: 15px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="heart-icon" onclick="burstHearts()">❤️</div>
+        <h1>To My Amazing Mom</h1>
+        
+        <!-- Generated Creative AI Abstract Art Area -->
+        <div class="ai-photo-container"></div>
+
+        <!-- Long Text Segment -->
+        <div class="long-text">
+            Mom, balancing middle school, sports, homework, and social life can get really stressful sometimes, but you always find a way to make everything easier. Whether you are staying up late to help me prep for a huge science test, driving me back and forth to practices, or just listening to me complain after a rough afternoon, you never complain. Your energy seems endless, and your patience is like a real-life superpower. I notice all the small hacks you do to keep our family happy and organized, and I want you to know it never goes unappreciated!
+        </div>
+
+        <!-- 7th Grade Themed Core Lines -->
+        <div class="lines-container">
+            <div class="mom-line">🍕 <strong>The Kitchen Magic:</strong> From packing my favorite lunches to cooking incredible dinners after a long school day, your food makes everything better.</div>
+            <div class="mom-line">💯 <strong>My Ultimate Fan:</strong> You are always standing on the sidelines cheering for me, tracking my grades, and pushing me to do my absolute best.</div>
+            <div class="mom-line">🧠 <strong>Homework Rescue:</strong> Thank you for staying completely calm when you explain tough math equations or help me edit my history essays.</div>
+            <div class="mom-line">🌟 <strong>Unmatched Vibes:</strong> You build a safe space where I can completely be myself, laugh off my mistakes, and always learn how to grow.</div>
+        </div>
+
+        <!-- 10 Openable Buttons Container -->
+        <div class="buttons-grid">
+            <button class="btn" onclick="toggleMsg(1)">1. Best Advice 💡</button>
+            <button class="btn" onclick="toggleMsg(2)">2. Cozy Hugs 🤗</button>
+            <button class="btn" onclick="toggleMsg(3)">3. Bright Smile 😁</button>
+            <button class="btn" onclick="toggleMsg(4)">4. Patient Heart ⏳</button>
+            <button class="btn" onclick="toggleMsg(5)">5. Warm House 🏠</button>
+            <button class="btn" onclick="toggleMsg(6)">6. Daily Laughs 😂</button>
+            <button class="btn" onclick="toggleMsg(7)">7. Hard Work 💪</button>
+            <button class="btn" onclick="toggleMsg(8)">8. Good Listening 🎧</button>
+            <button class="btn" onclick="toggleMsg(9)">9. Super Safe 🛡️</button>
+            <button class="btn" onclick="toggleMsg(10)">10. Endless Love ♾️</button>
+        </div>
+
+        <!-- Matching 10 Hidden Messages -->
+        <div id="msg1" class="surprise-msg">Thank you for teaching me how to treat people with kindness and stay strong when middle school gets confusing!</div>
+        <div id="msg2" class="surprise-msg">Your hugs literally melt away all the stress of a heavy school day and recharge my energy immediately!</div>
+        <div id="msg3" class="surprise-msg">Seeing your happy face when I walk through the front door makes coming home the best part of my day!</div>
+        <div id="msg4" class="surprise-msg">Thank you for not losing your cool when I lose my school supplies or take forever to clean up my room!</div>
+        <div id="msg5" class="surprise-msg">You transform our house from just a physical building into the coziest, safest sanctuary in the entire universe!</div>
+        <div id="msg6" class="surprise-msg">Thank you for sharing my weird sense of humor and making me laugh when things don't go exactly as planned!</div>
+        <div id="msg7" class="surprise-msg">I see how hard you work every day behind the scenes just to give us a wonderful, bright future. You inspire me!</div>
